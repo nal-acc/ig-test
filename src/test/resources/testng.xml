@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TEST" verbose="1" >
+    <test name="UI Igym">
+        <packages>
+            <package name="igym"/>
+        </packages>
+    </test>
+</suite>
