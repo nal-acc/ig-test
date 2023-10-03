@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.java.Log;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -16,6 +17,7 @@ public class LoginPage extends BasePage {
     private final SelenideElement passwordInput = $("form input[name='password']");
     private final SelenideElement loginButton = $("form button[type='submit']");
     private final SelenideElement alertMessage = $(".MuiAlert-message");
+    private final SelenideElement forgotPasswordButton = $(By.linkText("Forgot password?"));
 
     public LoginPage() {
         title.shouldBe(Condition.exist);
@@ -49,4 +51,11 @@ public class LoginPage extends BasePage {
     public String getAlertMessageText() {
         return alertMessage.text();
     }
+
+    @Step("Click Forgot Password Button")
+    public ForgotPasswordPage clickForgotPasswordButton() {
+        forgotPasswordButton.click();
+        return new ForgotPasswordPage();
+    }
+
 }

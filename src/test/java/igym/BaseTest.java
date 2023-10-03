@@ -9,6 +9,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.screenshot;
@@ -17,8 +18,13 @@ public class BaseTest {
     @BeforeClass
     public void beforeClass()
     {
-        DatabaseApi.prepareDb();
         WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeMethod
+    public void beforeMethod()
+    {
+        DatabaseApi.prepareDb();
     }
 
     protected void openLoginPage()
@@ -33,14 +39,8 @@ public class BaseTest {
             saveScreenshot(screenshot(OutputType.BYTES));
         }
         Selenide.closeWebDriver();
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass()
-    {
         DatabaseApi.cleanDb();
     }
-
 
     @Attachment(value = "Page screenshot", type = "image/png")
     public byte[] saveScreenshot(byte[] screenShot)
