@@ -2,6 +2,10 @@ package igym;
 
 import com.codeborne.selenide.Selenide;
 import igym.api.DatabaseApi;
+import igym.data.UserData;
+import igym.entity.User;
+import igym.pages.AdminUserPage;
+import igym.pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -46,6 +50,16 @@ public class BaseTest {
     public byte[] saveScreenshot(byte[] screenShot)
     {
         return screenShot;
+    }
+
+    protected AdminUserPage loginAsAdmin()
+    {
+        User user = UserData.admin();
+        openLoginPage();
+        return new LoginPage()
+                .setUserEmail(user.getEmail())
+                .setPassword(user.getPassword())
+                .clickLoginButton();
     }
 
     protected void sleep(long millis)
