@@ -10,10 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.screenshot;
@@ -43,6 +40,11 @@ public class BaseTest {
             saveScreenshot(screenshot(OutputType.BYTES));
         }
         Selenide.closeWebDriver();
+    }
+
+    @AfterTest
+    public void afterTEst()
+    {
         DatabaseApi.cleanDb();
     }
 

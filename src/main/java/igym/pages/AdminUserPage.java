@@ -13,6 +13,7 @@ public class AdminUserPage {
     private final SelenideElement title = $x("//*[@id='app']/div/header/div/h1[contains(text(), 'Admin Users')]");
     private final SelenideElement groupStylesMenuItem = $(By.linkText("Group Styles"));
     private final SelenideElement groupAgesMenuItem = $(By.linkText("Group Ages"));
+    private final SelenideElement clientsMenuItem = $(By.linkText("Clients"));
 
     public AdminUserPage() {
         title.shouldBe(Condition.exist);
@@ -28,5 +29,11 @@ public class AdminUserPage {
     public GroupAgesPage clickGroupAgesMenuItem() {
         groupAgesMenuItem.click();
         return new GroupAgesPage();
+    }
+
+    @Step("Click Group Ages menu")
+    public ClientsPage clickClientsMenuItem() {
+        clientsMenuItem.click();
+        return new ClientsPage();
     }
 }
