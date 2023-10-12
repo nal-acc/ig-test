@@ -45,6 +45,6 @@ public class ClientsTest extends BaseTest {
         Assert.assertEquals(clientsPage.getLastNameColumnText(), lastName);
         Assert.assertEquals(clientsPage.geEmailColumnText(), email);
         Assert.assertTrue(clientsPage.getDateOfBirthdayColumnText().contains(birthday));
-        Assert.assertTrue(clientsPage.gePhoneColumnText().contains(phone));
+        Assert.assertTrue(clientsPage.getPhoneColumnText().contains(phone));
     }
 }

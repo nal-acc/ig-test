@@ -43,7 +43,7 @@ public class ClientsPage {
     }
 
     @Step("Get phone column text")
-        public String gePhoneColumnText() {
+        public String getPhoneColumnText() {
         return phoneColumn.text();
     }
 

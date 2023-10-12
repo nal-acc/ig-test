@@ -31,7 +31,7 @@ public class AdminUserPage {
         return new GroupAgesPage();
     }
 
-    @Step("Click Group Ages menu")
+    @Step("Click Clients menu")
     public ClientsPage clickClientsMenuItem() {
         clientsMenuItem.click();
         return new ClientsPage();
