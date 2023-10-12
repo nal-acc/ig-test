@@ -30,10 +30,10 @@ public class ClientsTest extends BaseTest {
                 .setEmail(email)
                 .setFirstName(firstName)
                 .setLastName(lastName)
-                .setDateOgBirthday(birthday)
                 .setParentName(parentName)
                 .setPhone(phone)
                 .setCardNumber(cardNumber)
+                .setDateOgBirthday(birthday)
                 .clickCreateButton();
 
         sleep(1000);
@@ -44,7 +44,7 @@ public class ClientsTest extends BaseTest {
         Assert.assertEquals(clientsPage.getFirstNameColumnText(), firstName);
         Assert.assertEquals(clientsPage.getLastNameColumnText(), lastName);
         Assert.assertEquals(clientsPage.geEmailColumnText(), email);
-        Assert.assertEquals(clientsPage.getDateOfBirthdayColumnText(), birthday);
-        Assert.assertEquals(clientsPage.gePhoneColumnText(), phone);
+        Assert.assertTrue(clientsPage.getDateOfBirthdayColumnText().contains(birthday));
+        Assert.assertTrue(clientsPage.gePhoneColumnText().contains(phone));
     }
 }

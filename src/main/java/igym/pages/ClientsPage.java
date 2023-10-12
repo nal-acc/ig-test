@@ -10,12 +10,12 @@ import static com.codeborne.selenide.Selenide.$x;
 public class ClientsPage {
     public final String relativeUrlPath = "clients";
     private final SelenideElement headerTitle = $x("//*[@id='app']/div/header/div/h1[contains(text(), 'Clients')]");
-    private final SelenideElement cardNumberColumn = $("table tbody tr td:nth-child(2)");
-    private final SelenideElement firstNameColumn = $("table tbody tr td:nth-child(3)");
-    private final SelenideElement lastNameColumn = $("table tbody tr td:nth-child(4)");
-    private final SelenideElement emilColumn = $("table tbody tr td:nth-child(5)");
-    private final SelenideElement phoneColumn = $("table tbody tr td:nth-child(5)");
-    private final SelenideElement dateOfBirthdayColumn = $("table tbody tr td:nth-child(7)");
+    private final SelenideElement cardNumberColumn = $("table tbody tr td:nth-child(3)");
+    private final SelenideElement firstNameColumn = $("table tbody tr td:nth-child(4)");
+    private final SelenideElement lastNameColumn = $("table tbody tr td:nth-child(5)");
+    private final SelenideElement emilColumn = $("table tbody tr td:nth-child(6)");
+    private final SelenideElement phoneColumn = $("table tbody tr td:nth-child(7)");
+    private final SelenideElement dateOfBirthdayColumn = $("table tbody tr td:nth-child(9)");
     private final SelenideElement createButton = $("main button[type='button']");
 
     public ClientsPage() {

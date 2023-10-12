@@ -16,7 +16,7 @@ public class CreateClientPage extends BasePage {
     private final SelenideElement dateOgBirthdayInput = $("form input[type ='tel'][placeholder='yyyy-mm-dd']");
     private final SelenideElement parentNameInput = $("form input[name ='parent_name']");
     private final SelenideElement phoneInput = $("form input[name ='phone']");
-    private final SelenideElement createButton = $("main button[type='button']");
+    private final SelenideElement createButton = $("main div.MuiCardActions-root > button[type='button']");
 
     public CreateClientPage() {
         headerTitle.shouldBe(Condition.exist);
