@@ -22,8 +22,8 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
     }
 
-    @BeforeMethod
-    public void beforeMethod()
+    @BeforeTest
+    public void beforeTest()
     {
         DatabaseApi.prepareDb();
     }
@@ -42,7 +42,7 @@ public class BaseTest {
         Selenide.closeWebDriver();
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void afterTEst()
     {
         DatabaseApi.cleanDb();
